@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="12.4.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Persistence\Persistence.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Features\Queries\" />
+      <Folder Include="Features\Queries\CreateTableSpecification\" />
+      <Folder Include="Features\Queries\UpdateTableSpecification\" />
+      <Folder Include="Features\Queries\DeleteTableSpecification\" />
+      <Folder Include="Features\Queries\GetAllTableSpecifications\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Features\Queries\CreateTableSpecification\" />
+      <None Remove="Features\Queries\UpdateTableSpecification\" />
+      <None Remove="Features\Queries\DeleteTableSpecification\" />
+      <None Remove="Features\Queries\GetAllTableSpecifications\" />
+    </ItemGroup>
+</Project>

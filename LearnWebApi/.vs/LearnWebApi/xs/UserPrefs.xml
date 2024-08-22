@@ -1,0 +1,39 @@
+﻿<Properties StartupConfiguration="{0F68A827-FF72-4024-BB96-D68535C2631F}|https">
+  <MonoDevelop.Ide.ItemProperties.Application PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="LearnWebApi" expanded="True">
+            <Node name="Application">
+              <Node name="Controllers" expanded="True" />
+            </Node>
+            <Node name="Core">
+              <Node name="Features">
+                <Node name="Queries">
+                  <Node name="GetTableSpecifications" expanded="True">
+                    <Node name="GetTableSpecificationsHandler.cs" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="Persistence">
+              <Node name="DatabaseContext" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Repositories" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>
