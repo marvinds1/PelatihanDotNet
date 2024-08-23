@@ -9,9 +9,5 @@ namespace Persistence.Repositories
         List<T> GetAll();
         T? GetById(Guid id);
         Task<List<T>> AddBatch(List<T> entities);
-        //T? GetByTableNumber(int tableNumber);
-        //T? RemoveById(Guid id);
-        //void Update(T entity);
-        //void SaveChanges();
     }
 }

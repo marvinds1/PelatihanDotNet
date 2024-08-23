@@ -229,3 +229,11 @@ D:/course/Training/LearnWebApi/LearnWebApi/LearnWebApi/Application/obj/Debug/net
 /Users/Rifqi/Fileku/Kerjaan/C#/Task/PelatihanDotNet/LearnWebApi/Application/obj/Debug/net8.0/Applicat.44B5EDA2.Up2Date
 /Users/Rifqi/Fileku/Kerjaan/C#/Task/PelatihanDotNet/LearnWebApi/Application/obj/Debug/net8.0/Application.genruntimeconfig.cache
 /Users/Rifqi/Fileku/Kerjaan/C#/Task/PelatihanDotNet/LearnWebApi/Application/obj/Debug/net8.0/ref/Application.dll
+/Users/Rifqi/Fileku/Kerjaan/C#/Task/PelatihanDotNet/LearnWebApi/Application/bin/Debug/net8.0/Microsoft.Extensions.Caching.StackExchangeRedis.dll
+/Users/Rifqi/Fileku/Kerjaan/C#/Task/PelatihanDotNet/LearnWebApi/Application/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/Rifqi/Fileku/Kerjaan/C#/Task/PelatihanDotNet/LearnWebApi/Application/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/Rifqi/Fileku/Kerjaan/C#/Task/PelatihanDotNet/LearnWebApi/Application/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
+/Users/Rifqi/Fileku/Kerjaan/C#/Task/PelatihanDotNet/LearnWebApi/Application/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Users/Rifqi/Fileku/Kerjaan/C#/Task/PelatihanDotNet/LearnWebApi/Application/bin/Debug/net8.0/Pipelines.Sockets.Unofficial.dll
+/Users/Rifqi/Fileku/Kerjaan/C#/Task/PelatihanDotNet/LearnWebApi/Application/bin/Debug/net8.0/Serilog.dll
+/Users/Rifqi/Fileku/Kerjaan/C#/Task/PelatihanDotNet/LearnWebApi/Application/bin/Debug/net8.0/StackExchange.Redis.dll

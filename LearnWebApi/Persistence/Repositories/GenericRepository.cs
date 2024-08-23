@@ -23,42 +23,15 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
         return _context.Set<T>().Find(id);
     }
 
-    //public T? GetByTableNumber(int tableNumber)
-    //{
-    //    return _context.Set<T>().FirstOrDefault(e => EF.Property<int>(e, "TableNumber") == tableNumber);
-    //}
-
     public async Task<List<T>> AddBatch(List<T> entities)
     {
-        foreach(T entity in entities)
+        foreach (T entity in entities)
         {
             _context.Set<T>().Add(entity);
         }
-        
+
         await _context.SaveChangesAsync();
 
         return entities;
     }
-
-    //public void Update(T entity)
-    //{
-    //    _context.Set<T>().Update(entity);
-    //}
-
-    //public void RemoveById(Guid id)
-    //{
-    //    var entity = _context.Set<T>().Find(id);
-    //    if (entity != null)
-    //    {
-    //        _context.Set<T>().Remove(entity);
-    //    } else
-    //    {
-    //        Console.WriteLine("Entitas tidak ditemukan");
-    //    }
-    //}
-
-    //public void SaveChanges()
-    //{
-    //    _context.SaveChanges();
-    //}
 }

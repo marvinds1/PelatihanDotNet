@@ -17,15 +17,17 @@
     <ItemGroup>
       <Folder Include="Features\Queries\" />
       <Folder Include="Features\Queries\CreateTableSpecification\" />
-      <Folder Include="Features\Queries\UpdateTableSpecification\" />
-      <Folder Include="Features\Queries\DeleteTableSpecification\" />
       <Folder Include="Features\Queries\GetAllTableSpecifications\" />
+      <Folder Include="Features\Queries\GetAllTableSpecificationsRedis\" />
+      <Folder Include="Features\Queries\GetTableSpecificationsRedis\" />
+      <Folder Include="Features\Queries\CreateTableSpecificationRedis\" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="Features\Queries\CreateTableSpecification\" />
-      <None Remove="Features\Queries\UpdateTableSpecification\" />
-      <None Remove="Features\Queries\DeleteTableSpecification\" />
       <None Remove="Features\Queries\GetAllTableSpecifications\" />
+      <None Remove="Features\Queries\GetAllTableSpecificationsRedis\" />
+      <None Remove="Features\Queries\GetTableSpecificationsRedis\" />
+      <None Remove="Features\Queries\CreateTableSpecificationRedis\" />
     </ItemGroup>
 </Project>

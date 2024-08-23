@@ -1,12 +1,11 @@
 using Core.Features.Queries.CreateTableSpecification;
-using Core.Features.Queries.UpdateTableSpecification;
-using Core.Features.Queries.DeleteTableSpecification;
+using Core.Features.Queries.CreateTableSpecificationRedis;
+using Core.Features.Queries.GetAllTableSpecifications;
+using Core.Features.Queries.GetAllTableSpecificationsRedis;
 using Core.Features.Queries.GetTableSpecifications;
+using Core.Features.Queries.GetTableSpecificationsRedis;
 using MediatR;
-using Persistence.DatabaseContext;
-using Persistence.Models;
 using Microsoft.AspNetCore.Mvc;
-using Persistence.Repositories;
 
 namespace Application.Controllers
 {
@@ -24,7 +23,7 @@ namespace Application.Controllers
         {
             var request = new GetTableSpecificationsQuery()
             {
-                TableSpecificationId = id
+                TSpecificationId = id
             };
             var response = await _mediator.Send(request);
             return response;
@@ -37,51 +36,36 @@ namespace Application.Controllers
             return Ok(response);
         }
 
-        [HttpGet("v1/table/specification/")]
+        [HttpGet("v1/table/specification")]
         public async Task<IActionResult> GetAllTableSpecifications([FromQuery] GetAllTableSpecificationsQuery request)
         {
             var response = await _mediator.Send(request);
             return Ok(response);
         }
 
-        //[HttpPut("v1/table/specification/{id}")]
-        //public async Task<IActionResult> UpdateTableSpecification(Guid id, [FromBody] UpdateTableSpecificationCommand command)
-        //{
-        //    if (command == null || command.TableSpecificationId != id)
-        //    {
-        //        return BadRequest("Invalid request");
-        //    }
+        [HttpGet("v1/table/specification/redis/{id}")]
+        public async Task<GetTableSpecificationsRedisResponse> GetTableSpecificationsRedis(Guid id)
+        {
+            var request = new GetTableSpecificationsRedisQuery()
+            {
+                TableSpecificationId = id
+            };
+            var response = await _mediator.Send(request);
+            return response;
+        }
 
-        //    var response = await _mediator.Send(command);
+        [HttpPost("v1/table/specification/redis")]
+        public async Task<IActionResult> CreateTableSpecificationRedis(CreateTableSpecificationRedisQuery request)
+        {
+            var response = await _mediator.Send(request);
+            return Ok(response);
+        }
 
-        //    if (response.IsSuccess)
-        //    {
-        //        return NoContent();
-        //    }
-        //    else
-        //    {
-        //        return BadRequest(response.Errors);
-        //    }
-        //}
-
-        //[HttpDelete("v1/table/specification/{id}")]
-        //public async Task<IActionResult> DeleteTableSpecification(Guid id)
-        //{
-        //    var command = new DeleteTableSpecificationCommand
-        //    {
-        //        TableSpecificationId = id
-        //    };
-
-        //    var response = await _mediator.Send(command);
-
-        //    if (response.IsSuccess)
-        //    {
-        //        return NoContent();
-        //    }
-        //    else
-        //    {
-        //        return NotFound(response.Errors);
-        //    }
-        //}
+        [HttpGet("v1/table/specification/redis")]
+        public async Task<IActionResult> GetAllTableSpecificationsRedis([FromQuery] GetAllTableSpecificationsRedisQuery request)
+        {
+            var response = await _mediator.Send(request);
+            return Ok(response);
+        }
     }
 }

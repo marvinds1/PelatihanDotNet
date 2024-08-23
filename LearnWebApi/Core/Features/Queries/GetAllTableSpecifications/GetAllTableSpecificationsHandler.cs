@@ -1,10 +1,10 @@
 ﻿using System.Text.Json;
-using Core.Features.Queries.GetTableSpecifications;
+using Core.Features.Queries.GetAllTableSpecifications;
 using MediatR;
 using Persistence.Models;
 using Persistence.Repositories;
 
-namespace Core.Features.Queries.GetListTableSpecifications;
+namespace Core.Features.Queries.GetAllTableSpecifications;
 
 public class GetAllTableSpecificationsHandler : IRequestHandler<GetAllTableSpecificationsQuery, Object>
 {

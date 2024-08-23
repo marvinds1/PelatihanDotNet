@@ -1,20 +1,29 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MySqlConnector;
 using Persistence.DatabaseContext;
+using Persistence.Models;
 using Persistence.Repositories;
 
-namespace Persistence;
-
-public static class PersistenceRegistration
+namespace Persistence
 {
-    public static IServiceCollection AddPersistenceServices(this IServiceCollection services)
+    public static class PersistenceRegistration
     {
-        const string dbConnection = "Server=localhost;Database=DB_Dotnet;User=root;Password=admin123;SslMode=None;";
+        public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
+        {
+            string dbConnection = configuration.GetConnectionString("Database");
+            string redisConnection = configuration.GetConnectionString("Redis");
 
-        services.AddDbContext<TableContext>(opt => opt.UseMySql(dbConnection, ServerVersion.AutoDetect(dbConnection)));
-        services.AddScoped<ITableSpecificationRepository, TableSpecificationRepository>();
+            services.AddDbContext<TableContext>(opt => opt.UseMySql(dbConnection, ServerVersion.AutoDetect(dbConnection)));
 
-        return services;
+            services.AddStackExchangeRedisCache(opt =>
+            {
+                opt.Configuration = redisConnection;
+            });
+            services.AddScoped<ITableSpecificationRepository, TableSpecificationRepository>();
+
+            return services;
+        }
     }
+
 }

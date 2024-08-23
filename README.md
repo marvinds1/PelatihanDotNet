@@ -37,3 +37,8 @@ Day 3:
     }
   ]
 }
+
+Day 3:
+1. Telah menambahkan koneksi dengan redis beserta TTL 10 menit.
+2. Telah menambahkan snyc add terhadap redis setiap ada penambahan data
+3. Ketika redis mati akan otomatis hit ke SQL
