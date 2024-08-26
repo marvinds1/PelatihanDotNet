@@ -5,6 +5,7 @@ using Core.Features.Queries.GetAllTableSpecificationsRedis;
 using Core.Features.Queries.GetTableSpecifications;
 using Core.Features.Queries.GetTableSpecificationsRedis;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Application.Controllers
@@ -18,7 +19,8 @@ namespace Application.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("v1/table/specification/{id}")]
+        [Authorize(Roles = "Users")]
+        [HttpGet("Specification/{id}")]
         public async Task<GetTableSpecificationsResponse> GetTableSpecifications(Guid id)
         {
             var request = new GetTableSpecificationsQuery()
@@ -29,21 +31,24 @@ namespace Application.Controllers
             return response;
         }
 
-        [HttpPost("v1/table/specification")]
+        [Authorize]
+        [HttpPost("Specification")]
         public async Task<IActionResult> CreateTableSpecification([FromBody] CreateTableSpecificationQuery request)
         {
             var response = await _mediator.Send(request);
             return Ok(response);
         }
 
-        [HttpGet("v1/table/specification")]
+        [Authorize]
+        [HttpGet("Specification")]
         public async Task<IActionResult> GetAllTableSpecifications([FromQuery] GetAllTableSpecificationsQuery request)
         {
             var response = await _mediator.Send(request);
             return Ok(response);
         }
 
-        [HttpGet("v1/table/specification/redis/{id}")]
+        [Authorize]
+        [HttpGet("Specification/Redis/{id}")]
         public async Task<GetTableSpecificationsRedisResponse> GetTableSpecificationsRedis(Guid id)
         {
             var request = new GetTableSpecificationsRedisQuery()
@@ -54,14 +59,16 @@ namespace Application.Controllers
             return response;
         }
 
-        [HttpPost("v1/table/specification/redis")]
+        [Authorize]
+        [HttpPost("Specification/Redis")]
         public async Task<IActionResult> CreateTableSpecificationRedis(CreateTableSpecificationRedisQuery request)
         {
             var response = await _mediator.Send(request);
             return Ok(response);
         }
 
-        [HttpGet("v1/table/specification/redis")]
+        [Authorize]
+        [HttpGet("Specification/Redis")]
         public async Task<IActionResult> GetAllTableSpecificationsRedis([FromQuery] GetAllTableSpecificationsRedisQuery request)
         {
             var response = await _mediator.Send(request);

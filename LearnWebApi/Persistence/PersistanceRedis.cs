@@ -15,6 +15,7 @@ namespace Persistence
             services.AddSingleton(redis);
 
             services.AddScoped<ICacheService, RedisCacheService>();
+            
 
             return services;
         }

@@ -42,3 +42,9 @@ Day 3:
 1. Telah menambahkan koneksi dengan redis beserta TTL 10 menit.
 2. Telah menambahkan snyc add terhadap redis setiap ada penambahan data
 3. Ketika redis mati akan otomatis hit ke SQL
+
+Day 4:
+1. Telah menambahkan 5 endpoint berupa: Register, Login, CreateRole, AddRole, RefreshToken beserta handlingnya menggunakan JWT.
+2. Membuat tabel sql tambahan terkait kelima endpoint tersebut. (imigrasi table dilampirkan)
+3. Telah menambahkan authorization ke endpoint sebelumnya.
+4. Merapikan berbagai kodingan sebelumnya.

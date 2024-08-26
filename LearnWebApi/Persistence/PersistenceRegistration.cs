@@ -15,12 +15,14 @@ namespace Persistence
             string redisConnection = configuration.GetConnectionString("Redis");
 
             services.AddDbContext<TableContext>(opt => opt.UseMySql(dbConnection, ServerVersion.AutoDetect(dbConnection)));
+            services.AddDbContext<ApplicationDBContext>(opt => opt.UseMySql(dbConnection, ServerVersion.AutoDetect(dbConnection)));
 
             services.AddStackExchangeRedisCache(opt =>
             {
                 opt.Configuration = redisConnection;
             });
             services.AddScoped<ITableSpecificationRepository, TableSpecificationRepository>();
+            
 
             return services;
         }
